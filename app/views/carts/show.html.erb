@@ -18,7 +18,6 @@
       <tbody>
         <% enhanced_cart.each do |item| %>
           <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
-          <% puts "enhanced_cart" %>
         <% end %>
       </tbody>
       <tfoot>
