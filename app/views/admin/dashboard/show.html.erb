@@ -1,2 +1,17 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<header class="page-header">
+  <h1>Admin &raquo; Dashboard</h1>
+</header>
+
+<p>
+  The total number of products on the website is:
+  <%= @products %>
+</p>
+
+<p>
+  The total number of product categories on the website is:
+  <%= @categories %>
+</p>
+
+<hr>
+
+<%= link_to 'Products',  [:admin, :products] %>
