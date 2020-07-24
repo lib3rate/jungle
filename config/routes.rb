@@ -20,8 +20,15 @@ Rails.application.routes.draw do
 
   match 'about' => 'about#show', :via => :get
 
+  # These routes are for registration. The first renders a form in the browse, the second
+  # receives the form and creates a user in the database using the data given by the user.
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+
+  # these routes are for showing users a login form, logging them in, and logging them out.
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
