@@ -40,19 +40,18 @@ RSpec.describe User, type: :model do
                                 password: "test_password",
                                 password_confirmation: "test_password")
       expect(second_user).to_not be_valid
-      # expect(second_user.save).to be false
-      # puts second_user.errors.full_messages
+      expect(second_user.save).to be false
       expect(second_user.errors.full_messages).to include "Email has already been taken"
     end
     
-    # it "does not create a user if the password is too short" do
-    #   subject.password = "1"
-    #   subject.password_confirmation = "1"
-    #   # expect(subject).to_not be_valid
-    #   expect(subject.save).to be false
-    #   puts subject.errors.full_messages
-    #   # expect(subject.errors.full_messages).to include "Quantity can't be blank"
-    # end
+    it "does not create a user if the password is too short" do
+      subject.password = "1"
+      subject.password_confirmation = "1"
+      expect(subject).to_not be_valid
+      expect(subject.save).to be false
+      # puts subject.errors.full_messages
+      expect(subject.errors.full_messages).to include "Password is too short (minimum is 3 characters)"
+    end
 
   #   it "does not create a product when the category is not provided" do
   #     subject.category = nil
