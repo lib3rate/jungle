@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  
   subject {
     described_class.create( first_name: "Joe",
                             last_name: "Black",
@@ -49,14 +50,30 @@ RSpec.describe User, type: :model do
       subject.password_confirmation = "1"
       expect(subject).to_not be_valid
       expect(subject.save).to be false
-      # puts subject.errors.full_messages
       expect(subject.errors.full_messages).to include "Password is too short (minimum is 3 characters)"
     end
-
-  #   it "does not create a product when the category is not provided" do
-  #     subject.category = nil
-  #     expect(subject).to_not be_valid
-  #     expect(subject.errors.full_messages).to include "Category can't be blank"
-  #   end
   end
+
+  describe '.authenticate_with_credentials' do
+    it "authenticates when provided the correct credentials" do
+      expect(subject.save).to be true
+      expect(User.authenticate_with_credentials("test@example.com", "test_password")).to eq subject
+    end
+
+    it "does not authenticate if the provided password does not match the one in the database" do
+      expect(subject.save).to be true
+      expect(User.authenticate_with_credentials("test@example.com", "wrong_password")).to be nil
+    end
+
+    it "authenticates if the email has spaces in the beginning and at the end" do
+      expect(subject.save).to be true
+      expect(User.authenticate_with_credentials(" test@example.com ", "test_password")).to eq subject
+    end
+
+    it "authenticates if the email has a wrong-case letter" do
+      expect(subject.save).to be true
+      expect(User.authenticate_with_credentials("Test@Example.com", "test_password")).to eq subject
+    end
+  end
+
 end
