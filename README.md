@@ -10,9 +10,9 @@ Testing: RSpec, Capybara
 
 ## Screenshots
 
-!["Main products page"](https://github.com/lib3rate/scheduler/blob/master/docs/Default%20application%20view.png?raw=true)
-!["Specific product page"](https://github.com/lib3rate/scheduler/blob/master/docs/Booking%20an%20appointment.png?raw=true)
-!["Cart before checking out"](https://github.com/lib3rate/scheduler/blob/master/docs/Status%20indicator%20when%20updating%20.png?raw=true)
+!["Main products page"](https://github.com/lib3rate/jungle/blob/master/docs/Main%20products%20page.png?raw=true)
+!["Specific product page"](https://github.com/lib3rate/jungle/blob/master/docs/Specific%20product%20page.png?raw=true)
+!["Cart before checking out"](https://github.com/lib3rate/jungle/blob/master/docs/Cart%20before%20checking%20out.png?raw=true)
 
 ## Setup
 
