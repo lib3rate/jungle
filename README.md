@@ -2,6 +2,17 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+Front-end: Ruby on Rails, SASS
+
+Back-end: Ruby on Rails, PostgreSQL
+
+Testing: RSpec, Capybara
+
+## Screenshots
+
+!["Main products page"](https://github.com/lib3rate/scheduler/blob/master/docs/Default%20application%20view.png?raw=true)
+!["Specific product page"](https://github.com/lib3rate/scheduler/blob/master/docs/Booking%20an%20appointment.png?raw=true)
+!["Cart before checking out"](https://github.com/lib3rate/scheduler/blob/master/docs/Status%20indicator%20when%20updating%20.png?raw=true)
 
 ## Setup
 
