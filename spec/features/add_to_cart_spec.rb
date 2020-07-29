@@ -19,16 +19,17 @@ RSpec.feature "Users can navigate from the home page to the product detail page"
   scenario "by clicking on product details button" do
     visit root_path
     
+    expect(page).to have_text 'My Cart (0)'
     expect(page).to have_css 'article.product', count: 10
 
     first_product_footer = find('article.product footer', match: :first)
 
     within (first_product_footer) do
-      click_on 'Details'
+      click_on 'Add'
     end
     
-    expect(page).to have_css '.main-img', count: 1
+    expect(page).to have_text 'My Cart (1)'
 
-    save_and_open_screenshot('product_details.png')
+    save_and_open_screenshot('add_to_cart.png')
   end
 end
